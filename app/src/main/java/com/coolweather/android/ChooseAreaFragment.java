@@ -112,9 +112,11 @@ public class ChooseAreaFragment extends Fragment {
                         getActivity().finish();
                     }else if(getActivity() instanceof WeatherActivity){
                         WeatherActivity activity = (WeatherActivity) getActivity();
+                        //关闭抽屉菜单
                         activity.drawerLayout.closeDrawers();
                         //开启下拉刷新进度条
                         activity.swipeRefresh.setRefreshing(true);
+                        //请求加载城市天气
                         activity.requestWeather(weatherId);
                     }
                 }
